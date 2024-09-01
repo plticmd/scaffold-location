@@ -29,11 +29,10 @@ Before you begin, you need to install the following tools:
 
 To get started with Scaffold-ETH 2, follow the steps below:
 
-1. Clone this repo & install dependencies
+1. Install dependencies if it was skipped in CLI:
 
 ```
-git clone https://github.com/scaffold-eth/scaffold-eth-2.git
-cd scaffold-eth-2
+cd my-dapp-example
 yarn install
 ```
 
@@ -43,7 +42,7 @@ yarn install
 yarn chain
 ```
 
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
+This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/hardhat/hardhat.config.ts`.
 
 3. On a second terminal, deploy the test contract:
 
@@ -61,12 +60,11 @@ yarn start
 
 Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
 
-**What's next**:
+Run smart contract test with `yarn hardhat:test`
 
 - Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
 - Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
 - Edit your deployment scripts in `packages/hardhat/deploy`
-- Edit your smart contract test in: `packages/hardhat/test`. To run test use `yarn hardhat:test`
 
 ## Documentation
 
@@ -79,3 +77,69 @@ To know more about its features, check out our [website](https://scaffoldeth.io)
 We welcome contributions to Scaffold-ETH 2!
 
 Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+
+-----------------------ーー
+https://app.akindo.io/wave-hacks/83G3wN4rAhnqrnBL
+の動画
+---------------------------
+packages/hardhat/contracts/YourContract.sol
+
+packages/hardhat/deploy/00_deploy_your_contract.ts
+
+編集後
+$ yarn deploy --reset
+
+------------------------
+$ yarn run generate 
+ 　　　↓
+Generating new Wallet
+📄 Private Key saved to packages/hardhat/.env file
+🪄 Generated wallet address: *************
+
+ーーーーーーーーーーーーーー
+$ yarn account
+↓
+Public address: ***************
+（このアカウトへ0.05sepolia送金する）
+（残高はyarn accountで確認）
+
+----------------------------
+
+$ yarn deploy --network sepolia
+
+------------------------------
+packages/hardhat/contracts/YourContract.sol
+ーーーーーーーーーーーーーーーーーー
+packages/nextjs/app/page.tsx
+ーーーーーーーーーーーーーーーーーー
+components/Header.tsx, Footer.tsx
+------------------------------
+packages/hardhat/deploy/00_deploy_your_contract.ts
+------------------------------
+
+packages/nextjs/scaffold.config.ts
+ーーーーーーーーーーーーーーーーーー
+$ yarn verify --network sepolia
+------------------------------
+$ yarn vercel:yolo
+
+------------------------------
+$ yarn deploy --reset
+------------------------------
+$ yarn run generate
+------------------------------
+$  yarn account
+------------------------------
+$ yarn deploy --network sepolia
+-------------------------------
+https://docs.ethers.org/v5/troubleshooting/errors/#help-INSUFFICIENT_FUNDS
+
+-------------------------------
+ネットワーク切り替え
+＊nextjs/scaffold.config.ts
+  targetNetworks: [chains.hardhat],
+//targetNetworks: [chains.sepolia],
+
+
+
+ 

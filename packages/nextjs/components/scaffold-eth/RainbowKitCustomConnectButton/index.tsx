@@ -57,6 +57,7 @@ export const RainbowKitCustomConnectButton = () => {
                   />
                   <AddressQRCodeModal address={account.address as Address} modalId="qrcode-modal" />
                 </>
+                
               );
             })()}
           </>
