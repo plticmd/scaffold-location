@@ -1,6 +1,6 @@
 # Your-Location 
 Video is 
-https://www.youtube.com/shorts/C04B0wL5rbw
+https://youtu.be/JvDvifOCKAE?si=CHsu4F4f_5IyQ9IM
 
 
 # 🏗 Scaffold-ETH 2
