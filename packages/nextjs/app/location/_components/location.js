@@ -30,14 +30,30 @@ export const YourLocation = () => {
         }
       }
       
-      document.querySelector("#current-location").addEventListener("click", geoCurrentLocation);
-  
+      document.querySelector("#current-location");
+      addEventListener("click", geoCurrentLocation);
 
-      const options = {
-        enableHighAccuracy: true,
-        maximumAge: 30000,
-        //timeout: 27000,
-       };
+        try {
+          const options = {
+            get passive() {
+              // この関数はブラウザーが passive プロパティに
+              // アクセスしようとしたときに呼び出されます。
+              passiveSupported = true;
+              return false;
+            },
+          };
+
+          window.addEventListener("test", null, options);
+          window.removeEventListener("test", null, options);
+        } catch (err) {
+          passiveSupported = false;
+        }
+
+      // const options = {
+      //   enableHighAccuracy: true,
+      //   maximumAge: 30000,
+      //   //timeout: 27000,
+      //  };
       
     //   const watchID = navigator.geolocation.watchPosition(success, error, options);
 
