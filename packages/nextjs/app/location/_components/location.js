@@ -43,8 +43,8 @@ export const YourLocation = () => {
             },
           };
 
-          window.addEventListener("test", null, options);
-          window.removeEventListener("test", null, options);
+          window.addEventListener("click", null, options);
+          window.removeEventListener("click", null, options);
         } catch (err) {
           passiveSupported = false;
         }
