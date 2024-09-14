@@ -20,4 +20,4 @@ Walking Apps are too much battery consumption.
 Default location tracking setting also same.
 
 
-# 🏗 Scaffold-ETH 2
+# On 🏗 Scaffold-ETH 2
