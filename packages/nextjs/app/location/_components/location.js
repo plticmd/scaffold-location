@@ -33,30 +33,6 @@ export const YourLocation = () => {
       document.querySelector("#current-location");
       addEventListener("click", geoCurrentLocation);
 
-        try {
-          const options = {
-            get passive() {
-              // この関数はブラウザーが passive プロパティに
-              // アクセスしようとしたときに呼び出されます。
-              passiveSupported = true;
-              return false;
-            },
-          };
-
-          window.addEventListener("click", null, options);
-          window.removeEventListener("click", null, options);
-        } catch (err) {
-          passiveSupported = false;
-        }
-
-      // const options = {
-      //   enableHighAccuracy: true,
-      //   maximumAge: 30000,
-      //   //timeout: 27000,
-      //  };
-      
-    //   const watchID = navigator.geolocation.watchPosition(success, error, options);
-
   return (
     <>
       <div className="bg-base-300 p-6 rounded-lg max-w-md mx-auto mt-6">
