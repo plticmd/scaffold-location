@@ -9,44 +9,6 @@
 import { useAccount } from "wagmi";
 import { Address, Balance } from "~~/components/scaffold-eth";
 
-//Applo Client
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
-
-const APIURL = 'https://api.studio.thegraph.com/query/graph-operating/'
-const tokensQuery = `
-  query ($first: Int, $orderBy: BigInt, $orderDirection: String){
-    tokens (
-      first: $first, orderBy: $orderBy, orderDirection: $orderDirection
-    ) {
-      id
-      tokenID
-      contentURI
-      metadataURI
-    }
-  }
-`
-
-const client = new ApolloClient({
-  uri: APIURL,
-  cache: new InMemoryCache(),
-})
-
-client
-  .query({
-    query: gql(tokensQuery),
-    variables: {
-      first: 10,
-      orderBy: 'createdAtTimestamp',
-      orderDirection: 'desc',
-    },
-  })
-  .then((data) => console.log('Subgraph data: ', data))
-  .catch((err) => {
-    console.log('Error fetching data: ', err)
-  })
-
-
-
   
 export const ConnectedAddressBalance = () => {
 
