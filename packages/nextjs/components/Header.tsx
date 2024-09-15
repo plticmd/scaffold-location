@@ -19,24 +19,14 @@ export const menuLinks: HeaderMenuLink[] = [
     label: "Home",
     href: "/",
   },
-  // {
-  //   label: "Debug Contracts",
-  //   href: "/debug",
-  //   icon: <BugAntIcon className="h-4 w-4" />,
-  // },
-  // {
-  //   label: "Greetings",
-  //   href: "/greetings",
-  //   icon: <BugAntIcon className="h-4 w-4" />,
-  // },
-  // {
-  //   label: "blockexplorer",
-  //   href: "/blockexplorer",
-  //   icon: <BugAntIcon className="h-4 w-4" />,
-  // },
   {
-    label: "location",
+    label: "Location",
     href: "/location",
+    icon: <BugAntIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Altitude",
+    href: "/altitude",
     icon: <BugAntIcon className="h-4 w-4" />,
   },
 ];
