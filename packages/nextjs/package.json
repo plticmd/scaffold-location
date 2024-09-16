@@ -11,7 +11,7 @@
     "serve": "next start",
     "start": "next dev",
     "vercel": "vercel",
-    "vercel:yolo": "vercel --build-env NEXT_PUBLIC_IGNORE_BUILD_ERROR=true"
+    
   },
   "dependencies": {
     "@apollo/client": "^3.11.4",
